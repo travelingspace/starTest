@@ -35,7 +35,7 @@
         });
 
         function getRandomWidth() {
-            var width = Math.floor((Math.random() * 15) + 10);
+            var width = Math.floor((Math.random() * 5) + 2);
             return width;
         }
 
@@ -46,10 +46,17 @@
 
         }
 
+        //function called on page load 
+        var counter = 1;
         function getSetSizePosition() {
-            $("#star").css("width", getRandomWidth() + "px");
-            $("#star").offset({ left: getRandomPosition(), right: getRandomPosition() });
-        }
+                  
+            if (counter < 20) {
+                counter++;
+                $("#star").css("width", getRandomWidth() + "px");
+                $("#star").offset({ left: getRandomPosition(), top: getRandomPosition() });
+                window.setTimeout(getSetSizePosition, 500);
+            };
+        };
 
     </script>
 
