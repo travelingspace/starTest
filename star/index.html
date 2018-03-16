@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>star test</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <style type="text/css">
+        body{
+            background-color:black;
+        }
+
+        div{
+            margin:auto;
+            padding:10%;
+            width:50%;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <img id="star" src="star.png" />
+    </div>
+
+
+    <script type="text/javascript">
+        $(function () {
+
+            getSetSizePosition();
+            
+        });
+
+        function getRandomWidth() {
+            var width = Math.floor((Math.random() * 15) + 10);
+            return width;
+        }
+
+        function getRandomPosition() {
+
+            var position = Math.floor((Math.random() * 100) + 30);
+            return position;
+
+        }
+
+        function getSetSizePosition() {
+            $("#star").css("width", getRandomWidth() + "px");
+            $("#star").offset({ left: getRandomPosition(), right: getRandomPosition() });
+        }
+
+    </script>
+
+</body>
+</html>
